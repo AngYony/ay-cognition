@@ -1,0 +1,1692 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>KK音标</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /*母音相关的 */
+        .my-rq, wz-rq {
+            position: relative;
+        }
+
+        .my {
+            position: absolute;
+        }
+
+        .zy-rq {
+            margin-top: 10px;
+        }
+
+        .zy {
+            float: left;
+            margin-left: 15px;
+        }
+
+        .my-wz {
+            position: absolute;
+            font-size: 28px;
+            color: #4e7923;
+        }
+
+        h3.my-wz, h3 {
+            color: #393737;
+        }
+
+        .zy-title {
+            font-size: 28px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+
+        .yb, .kyb {
+            background-color: #ebfaf6;
+            font-size: 23px;
+            padding: 10px;
+            border: 1px solid #c4c3c3;
+        }
+
+
+        .yb-bgcolor_1 {
+            background-color: #fcc0fc;
+        }
+
+        .yb-bgcolor_2 {
+            background-color: #fbf6ba;
+        }
+
+        .yb-bgcolor_3 {
+            background-color: #b3f0f8;
+        }
+
+        .yb-bgcolor_4 {
+            background-color: #fcbec7;
+        }
+
+        .yb-bgcolor_5 {
+            background-color: #c6fbb0;
+        }
+
+        .yb-bgcolor_6 {
+            background-color: #c2dcfc;
+        }
+
+        .yb-bgcolor_7 {
+            background-color: #c6ffe5;
+        }
+
+        .yb-bgcolor_8 {
+            background-color: #e8e7ff;
+        }
+
+        .yb:hover, .yb-active {
+            background-color: #ff6a00;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+
+
+
+
+        .fy-remark {
+            display: none;
+        }
+
+
+        .yb-remark-panel {
+            width: 400px;
+            border: 1px solid #ea6506;
+            font-size: 20px;
+            color: #ea6506;
+            padding: 10px;
+            line-height: 30px;
+            float: left;
+        }
+
+            .yb-remark-panel code, .right-message-panel code {
+                border: 1px solid #f8f2f2;
+                background-color: #fbf9f9;
+                padding: 2px 3px;
+                line-height: 35px;
+                border-radius: 3px;
+            }
+
+            .yb-remark-panel ul {
+                margin-left: 25px;
+            }
+
+
+        .right-message-panel {
+            background-color: #fefdf0;
+            float: right;
+            width: 520px;
+            font-size: 20px;
+            padding: 10px 10px 10px 30px;
+        }
+
+            .right-message-panel li {
+                margin-top: 10px;
+                line-height: 28px;
+                margin-left: 10px;
+            }
+
+        .bc {
+            color: #bb031f;
+            font-size: 20px;
+            line-height: normal;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .dpsm {
+            color: #0461b1;
+        }
+
+        .yb-remark-panel h4 {
+            color: #495660;
+            font-size: 20px;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+
+
+
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #808080;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .zm-column {
+            width: 19%;
+            float: left;
+            margin-left: 1%;
+        }
+
+        .dpsm-zm {
+            color: #ea6506;
+            font-size: 26px;
+        }
+
+        .dpsm dd {
+            padding-left: 5px;
+        }
+
+        .zm-panel {
+            background-color: #fef0e5;
+            margin-top: 10px;
+            font-size: 22px;
+            border: 3px solid #fcd3b5;
+        }
+
+            .zm-panel h4 {
+                text-align: center;
+                font-size: 28px;
+                color: #028f8f;
+                background-color: #fcd3b5;
+                padding: 5px;
+                font-weight: 500;
+            }
+
+        dl {
+            margin-bottom: 10px;
+        }
+
+        dt {
+            color: #ea6506;
+            font-weight: 500;
+            margin-top: 10px;
+            font-size: 26px;
+            padding-left: 5px;
+        }
+
+        dd {
+            padding-left: 40px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+    <div style="width:750px;height:750px; border:1px solid #a9a4a4; float:left;">
+        <canvas id="myCanvas" height="750" width="750" style="position:absolute; z-index: -1;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.lineWidth = 3;
+            ctx.lineJoin = "round";
+            ctx.beginPath();
+            ctx.moveTo(170, 100);
+            ctx.lineTo(270, 520);
+            ctx.lineTo(470, 520);
+            ctx.lineTo(570, 100);
+            ctx.strokeStyle = "#f4922d";
+            ctx.stroke();
+        </script>
+
+        <!--文字说明部分定位-->
+        <div class="wz-rq">
+            <h3 class="my-wz" style="left:10px; top:10px;">单母音</h3>
+            <p class="my-wz" style="left:140px; top:55px;">扁</p>
+            <p class="my-wz" style="left:580px; top:55px;">小</p>
+            <p class="my-wz" style="left:280px; top:485px;">开</p>
+            <p class="my-wz" style="left:435px; top:485px;">大</p>
+            <h3 class="my-wz" style="left:10px; top:615px;">双母音</h3>
+        </div>
+
+
+
+        <!--左边部分-->
+        <div class="my-rq">
+
+
+            <div class="my yb yb-bgcolor_1" style="left: 80px; top:100px;" title="【yi】">
+                <code>[i]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>yi</code>】（易）。</p>
+                    <p>嘴巴要很紧很扁发出，嘴角要往两边，舌尖要稍微用力一下。</p>
+                    <p class="bc"><code>[i]</code>和<code>[ɪ]</code>：不是声音的长短，而是嘴型扁的程度。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[i]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">e</span>:
+                                <code>we[wi]</code>
+                                <code>me[mi]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ee</span>:
+                                <code>feet[fit]</code>
+                                <code>see[si]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ea</span>:
+                                <code>heat[hit]</code>
+                                <code>flea[fli]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">y</span>:
+                                <code>lady['ledi]</code>
+                                <code>easy['izi]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ie</span>:
+                                <code>field[fild]</code>
+                                <code>thief[θif]</code>
+                            </dd>
+                        </dl>
+                        <h4><code>[i]</code>的变音说明：</h4>
+                        <ul>
+                            <li>
+                                【<code>ei-yi</code>】，注意发音末尾以音标<code>[i]</code>结尾。例如:
+                                <code>[wi]</code>
+                                <code>[si]</code>
+                                <code>[ri]</code>
+                                <code>[fi]</code>
+                                <code>[hi]</code>
+                                <code>[θi]</code>
+                                <code>[zi]</code>（XYZ中的Z音）
+                            </li>
+                            <li>
+                                【<code>yi</code>】，本音。例如:
+                                <code>[ti]</code>
+                                <code>[mi]</code>
+                                <code>[li]</code>
+                                <code>[di]</code>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_1" style="left: 100px; top:190px;" title="【yi】">
+                <code>[ɪ]</code>
+                <div class="fy-remark">
+                    <p>发音和<code>[i]</code>类似，汉语拼音【<code>yi</code>】（易）。</p>
+                    <p>与<code>[i]</code>相比，发<code>[ɪ]</code>音时，嘴巴要放松一些。</p>
+                    <p class="bc"><code>[i]</code>和<code>[ɪ]</code>：不是声音的长短，而是嘴型扁的程度。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɪ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">i</span>:
+                                <code>dig[dɪg]</code>
+                                <code>milk[mɪlk]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">y</span>:
+                                <code>gym[dʒɪm]</code>
+                                <code>dirty['dɜtɪ]</code>
+                            </dd>
+                        </dl>
+
+                        <h4><code>[ɪ]</code>的变音说明：</h4>
+                        （参考<code>[i]</code>）
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="my yb" style="left: 122px; top:285px;" title="【ei】">
+                <code>[e]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的韵母【<code>ei</code>】，四声。</p>
+                    <p>也是英文字母“A”的发音。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[e]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">a*e</span>（单词以字母<code>e</code>结尾）:
+                                <code>name[nem]</code>
+                                <code>lake[lek]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ai</span>:
+                                <code>nail[nel]</code>
+                                <code>rain[ren]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ay</span>:
+                                <code>day[de]</code>
+                                <code>way[we]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ea</span>:
+                                <code>steak[stek]</code>
+                                <code>great[gret]</code>
+                            </dd>
+                        </dl>
+                        <h4><code>[e]</code>的变音说明：</h4>
+                        类似于汉语拼音中的声母与韵母【<code>ei</code>】组合时的拼读规则。
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_2 " style="left: 145px; top:380px;" title="【ai】">
+                <code>[ɛ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的韵母【<code>ai</code>】（哎），快速而短促的发出。</p>
+                    <p>相近的发音例句：（有点像平时说话时，引起别人注意）“ai,你吃饭了吗？”</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɛ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">e</span>:
+                                <code>bed[bɛd]</code>
+                                <code>cell[sɛl]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ea</span>:
+                                <code>bread[brɛd]</code>
+                                <code>head[hɛd]</code>
+                            </dd>
+
+                            <dd>
+                                <span class="dpsm-zm">e*e</span>(单词以字母<code>e</code>结尾):
+                                <code>sense[sɛns]</code>
+                                <code>fence[fɛns]</code>
+                            </dd>
+                        </dl>
+
+                        <h4><code>[ɛ]</code>的变音说明：</h4>
+                        类似于汉语拼音中的声母与韵母【<code>ai</code>】组合时的拼读规则。
+                        <ul>
+                            <li><code>[ɛl]</code>:【<code>ai-ao</code>】</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_2 " style="left: 165px; top:470px;" title="【ai】">
+                <code>[æ]</code>
+                <div class="fy-remark">
+                    <p>发音和<code>[ɛ]</code>类似，汉语拼音【<code>ai</code>】（哎）。</p>
+                    <p>与<code>[ɛ]</code>相比，发<code>[æ]</code>音时，嘴巴要张的更大一些，舌头下压。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[æ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">a</span>:
+                                <code>cat[kæt]</code>
+                                <code>flag[flæg]</code>
+                            </dd>
+                        </dl>
+
+                        <h4><code>[æ]</code>的变音说明：</h4>
+                        （参考<code>[ɛ]</code>）
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--右边部分-->
+            <div class="my yb yb-bgcolor_3" style="left: 595px; top:100px;" title="【e-u】">
+                <code>[u]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>e-u</code>】。</p>
+                    <p>（汉语拼音【<code>e</code>】和【<code>u</code>】的和音）</p>
+                    <p>读的时候，嘴巴稍紧一些，音长一些。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[u]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">oo</span>:
+                                <code>moon[mun]</code>
+                                <code>food[fud]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">u</span>:
+                                <code>ruby['rubɪ]</code>
+                                <code>July[dʒu'laɪ]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ue</span>:
+                                <code>blue[blu]</code>
+                                <code>true[tru]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ew</span>:
+                                <code>flew[flu]</code>
+                                <code>blew[blu]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">u*e</span>（单词以字母e结尾）:
+                                <code>rule[rul]</code>
+                                <code>flute[flut]</code>
+                            </dd>
+
+                        </dl>
+                        <h4><code>[u]</code>的变音说明：</h4>
+                        <ul>
+                            <li><code>[tu]</code>:【<code>ti-u</code>】</li>
+                            <li><code>[un]</code>:和汉语拼音中的韵母【un】发音一致。</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_3" style="left: 570px; top:225px;" title="【e-u】">
+                <code>[ʊ]</code>
+                <div class="fy-remark">
+                    <p>发音和[u]类似，汉语拼音【<code>e-u</code>】。</p>
+                    <p>与<code>[u]</code>相比，发<code>[ʊ]</code>音时，嘴巴要放松一些。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ʊ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">oo</span>:
+                                <code>book[bʊk]</code>
+                                <code>cook[kʊk]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">u</span>:
+                                <code>put[pʊt]</code>
+                                <code>push[pʊ∫]</code>
+                            </dd>
+
+                        </dl>
+                        <h4><code>[ʊ]</code>的变音说明：</h4>
+                        （参考<code>[u]</code>）
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_4" style="left: 540px; top:350px;" title="【o】">
+                <code>[ɔ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>o</code>】（哦），四声。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɔ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">o(r)</span>:
+                                <code>for[fɔr]</code>
+                                <code>door[dɔr]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">a(l)</span>:
+                                <code>talk[tɔk]</code>
+                                <code>walk[wɔk]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">a(ll)</span>:
+                                <code>ball[bɔl]</code>
+                                <code>tall[tɔl]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">au</span>:
+                                <code>cause[kɔz]</code>
+                                <code>pause[pɔz]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">aw</span>:
+                                <code>saw[sɔ]</code>
+                                <code>law[lɔ]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_5" style="left: 510px; top:470px;" title="【ou】">
+                <code>[o]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>ou</code>】，四声。</p>
+                    <p>（准确来说，是汉语拼音中韵母【<code>ou</code>】（怄）和英语音标<code>[u]</code>的和音，<code>[u]</code>要轻声发出以至于感觉是省略掉了。）</p>
+                    <p>也是英文字母“O”的发音。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[o]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">o*e</span>（单词以字母<code>e</code>结尾）:
+                                <code>hope[hop]</code>
+                                <code>home[hom]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ow</span>:
+                                <code>know[no]</code>
+                                <code>row[ro]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">oa</span>:
+                                <code>boat[bot]</code>
+                                <code>soap[sop]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">oe</span>:
+                                <code>toe[to]</code>
+                                <code>goes[goz]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--中间部分-->
+            <div class="my yb yb-bgcolor_6" style="left: 340px; top:540px;" title="【a】">
+                <code>[ɑ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>a</code>】（啊），四声。</p>
+                    <p>嘴巴要张的最大。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɑ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">o</span>:
+                                <code>lock[lɑk]</code>
+                                <code>clock[klɑk]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">a</span>:
+                                <code>watch[wɑt∫]</code>
+                                <code>arm[ɑrm]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_6" style="left: 340px; top:445px;" title="【a】">
+                <code>[ʌ]</code>
+                <div class="fy-remark">
+                    <p>发音和<code>[ɑ]</code>类似，汉语拼音【<code>a</code>】（啊），四声。</p>
+                    <p>与<code>[ɑ]</code>相比，发<code>[ʌ]</code>音时，嘴巴要收一些，快速短促的发出。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ʌ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">u</span>:
+                                <code>duck[dʌk]</code>
+                                <code>fun[fʌn]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">o</span>:
+                                <code>son[sʌn]</code>
+                                <code>come[kʌm]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ou</span>:
+                                <code>double['dʌbl]</code>
+                                <code>southedrn['sʌðɚn]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="my yb yb-bgcolor_7" style="left: 340px; top:370px;" title="【e】">
+                <code>[ə]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>e</code>】（额）</p>
+                    <p>就像人极度饥饿没有力气的时候，说“饿”时发出的音。</p>
+                    <p class="bc">注意：该音是轻声音，类似于汉语中的第一声轻音。并且[ə]不会出现在重音节中。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ə]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">a</span>:
+                                <code>ago[ə'go]</code>
+                                <code>about[ə'baʊt]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">e</span>:
+                                <code>quiet[kwaɪət]</code>
+                                <code>happen['hæpən]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">i</span>:
+                                <code>direct[də'rɛkt]</code>
+                                <code>possible['pɑsəbl]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">o</span>:
+                                <code>today[tə'de]</code>
+                                <code>second['sɛkənd]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">u</span>:
+                                <code>circus['sɝkəs]</code>
+                                <code>album['ælbəm]（末尾发【en】的音）</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="my yb yb-bgcolor_7" style="left: 340px; top:295px;" title="【er】">
+                <code>[ɚ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>er</code>】（儿），轻声翘舌音，一声。</p>
+                    <p class="bc">注意：该音是轻声音，类似于汉语中的第一声轻音，该音不会出现在重音节中。</p>
+
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɚ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">er，在轻音节中发<code>[ɚ]</code></span>:
+
+                                <code>after['æftɚ]</code>
+                                <code>sister['sɪstɚ]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">or</span>:
+                                <code>tailor['telɚ]</code>
+                                <code>happen['æktɚ]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_7" style="left: 340px; top:220px;" title="【er】">
+                <code>[ɝ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>er</code>】（二），四声翘舌音。</p>
+                    <p class="bc">注意：<code>[ɚ]</code>发轻声翘舌音，而<code>[ɝ]</code>发第四声翘舌音。</p>
+
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɝ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">ur</span>:
+                                <code>burn[bɝn]</code>
+                                <code>fur['fɝ]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">er，在重音节中发<code>[ɝ]</code></span>:
+                                <code>clerk['klɝk]</code>
+                                <code>verb['vɝb]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ir</span>:
+                                <code>bird[bɝd]</code>
+                                <code>girl['gɝl]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!--下面部分-->
+            
+            <div class="my yb" style="left: 80px; top:665px;" title="【ao】">
+                <code>[aʊ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的韵母【<code>ao</code>】（奥），四声。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[aʊ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">ou</span>:
+                                <code>cloud[klaʊd]</code>
+                                <code>house[haʊs]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ow</span>:
+                                <code>cow[kaʊ]</code>
+                                <code>down[daʊn]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb" style="left: 180px; top:665px;" title="【ai】">
+                <code>[aɪ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的韵母【<code>ai</code>】（爱），四声。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[aɪ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">i*e</span>（单词以字母<code>e</code>结尾）:
+                                <code>bike[baɪk]</code>
+                                <code>kite[kaɪt]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">y</span>:
+                                <code>cry[kraɪ]</code>
+                                <code>dry[draɪ]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">i</span>:
+                                <code>child[t∫aɪld]</code>
+                                <code>kind[kaɪnd]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ie</span>:
+                                <code>die[daɪ]</code>
+                                <code>pie[paɪ]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">igh</span>:
+                                <code>night[naɪt]</code>
+                                <code>right[raɪt]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my yb" style="left: 280px; top:665px;" title="【o】【yi】">
+                <code>[ɔɪ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>o</code>】【<code>yi</code>】（哦衣）</p>
+                    <p>这个音标要独立发出两个音，而不是合成音。</p>
+
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[ɔɪ]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">oi</span>:
+                                <code>coin[kɔɪn]</code>
+                                <code>point[pɔɪnt]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">oy</span>:
+                                <code>boy[bɔɪ]</code>
+                                <code>enjoy[ɪn'dʒɔɪ]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="my yb yb-bgcolor_8" style="left: 380px; top:665px;" title="【ei】">
+                <code>[eɪ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>ei</code>】</p>
+                </div>
+            </div>
+
+            <div class="my yb yb-bgcolor_8" style="left: 480px; top:665px;" title="【ou】">
+                <code>[oʊ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>ou</code>】</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!--中间的单个音标发音说明面板-->
+    <div id="yb_remark_panel" class="yb-remark-panel"></div>
+
+    <!--最右边的音标发音总结面板-->
+    <div class="right-message-panel">
+        <ul style="list-style-type:decimal;">
+            <li>找出音标中所有的母音。</li>
+            <li>按照“后母接前子（子音+母音）”的原则对音标分段。</li>
+            <li>将分段后的音标按照“和音”方式进行发音。</li>
+        </ul>
+
+        <ul>
+            <li>一个母音可以单独存在，一个子音必须配上母音才能发音。</li>
+            <li>母音中，除了<code>[ə]</code>和<code>[ɚ]</code>发轻声，其余的母音均发四声。</li>
+            <li>和音：类似于“这样”读作“酱”的发音。常见发和音的如音标[n]。</li>
+            <li>单词中出现字母“gh”时，“gh”一般不发音。</li>
+            <li>有重音节符号的，一般读强调式的一声。</li>
+            <li>如果有两个母音字母连在一起时，一般只发前面的母音字母，后一个母音字母不发音。</li>
+        </ul>
+		
+
+    </div>
+    <div style="clear:both;"></div>
+
+
+
+
+    <!--子音部分-->
+    <div style="margin-top:20px;">
+        <div class="zy-rq">
+
+            <h3 class="zy-title">无声子音</h3>
+
+            <div class="zy yb yb-bgcolor_1" title="【p】">
+                <code>[p]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>p</code>】，轻声，只送气不发声，声带不振动。</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_2" title="【t】">
+                <code>[t]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>t</code>】，有气不发声。</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_3" title="【k】">
+                <code>[k]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>k</code>】，有气不发声。</p>
+
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[k]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">c</span>:
+                                <code>cat[kæt]</code>
+                                <code>cot[kat]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">k</span>:
+                                <code>key[ki]</code>
+                                <code>king[kɪŋ]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ck</span>:
+                                <code>luck[lʌk]</code>
+                                <code>back[bæk]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">lk</span>（在a之后）:
+                                <code>talk[tɔk]</code>
+                                <code>walk[wɔk]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">q</span>（在u之前）:
+                                <code>queen[kwin]</code>
+                                <code>quit[kwɪt]</code>
+                            </dd>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_4" title="【f】">
+                <code>[f]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>f</code>】，有气不发声。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[f]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">f</span>:
+                                <code>fan[fæn]</code>
+                                <code>five[faɪv]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ff</span>:
+                                <code>muffin['mʌfin]</code>
+                                <code>off[ɔf]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ph</span>:
+                                <code>phone[fon]</code>
+                                <code>photo['foto]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">lf</span>:
+                                <code>shelf[∫ɛlf]</code>
+                                <code>half[hæf]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">gh</span>（在au/ou之后）:
+                                <code>laugh[∫ɛlf]</code>
+                                <code>enough[ɪ'nʌf]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_5" title="【s】">
+                <code>[s]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>s</code>】（思），注意轻声有气不发声。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[s]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">c</span>（在i/e/y之前）:
+                                <code>circle['sɝkl]</code>
+                                <code>cent[sɛnt]</code>
+                                <code>cycle['saɪkl]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">s</span>:
+                                <code>sun[sʌn]</code>
+                                <code>bus[bʌs]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">ss</span>:
+                                <code>boss[bɔs]</code>
+                                <code>kiss[kɪs]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_6" title="咬舌[s]">
+                <code>[θ]</code>
+                <div class="fy-remark">
+                    <p>
+                        咬舌音，轻轻咬住舌尖发音标<code>[s]</code>的音，由于是咬着舌尖，因此不能发出和<code>[s]</code>一样清脆的音。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="zy yb yb-bgcolor_7" title="">
+                <code>[∫]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>sh-ü</code>】，轻声声带不振动。</p>
+                    <p>（汉语拼音【<code>sh</code>】和【<code>ü</code>】的和音）</p>
+                    <p>有点像以【<code>sh</code>】开头，发【<code>xi</code>】音。</p>
+                    <p>发音的时候，嘴巴不能嘟着，要扁着发出，轻声声带不振动。</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_8" title="[t-∫]">
+                <code>[t∫]</code>
+                <div class="fy-remark">
+                    <p>音标<code>[t]</code>和<code>[∫]</code>的和音，发音类似于汉语拼音【<code>t-chi</code>】</p>
+                    <p>（汉语拼音【<code>t</code>】和【<code>chi</code>】的和音，即：以【<code>t</code>】开头，发【<code>chi</code>】音。）</p>
+                </div>
+            </div>
+
+            <div class="zy yb" title="【h】">
+                <code>[h]</code>
+                <div class="fy-remark">
+                    <p>
+                        发音类似于汉语拼音中的声母【<code>h</code>】，声带不振动。
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div style="clear:both;"></div>
+        </div>
+        <div class="zy-rq">
+            <h3 class="zy-title">有声子音</h3>
+
+            <div class="zy yb yb-bgcolor_1" title="【b】">
+                <code>[b]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>b</code>】，轻声发出声音，声带振动</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_2" title="【d】">
+                <code>[d]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>d</code>】，轻声发出声音，声带振动。</p>
+                </div>
+            </div>
+            
+            <div class="zy yb yb-bgcolor_3" title="【g】">
+                <code>[g]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音中的声母【<code>g</code>】，轻声发出声音，声带振动。</p>
+                    <div class="dpsm">
+                        <h4>在单词中，发<code>[g]</code>音的常见英文字母有：</h4>
+                        <dl>
+                            <dd>
+                                <span class="dpsm-zm">g</span>（在a,o,u或其他子音前）:
+                                <code>gate[get]</code>
+                                <code>got[gɑt]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">g</span>（在字尾）:
+                                <code>bag[bæg]</code>
+                                <code>dog[dɔg]</code>
+                            </dd>
+                            <dd>
+                                <span class="dpsm-zm">gh</span>（出现在字首）:
+                                <code>ghost[gost]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_4" title="【v】">
+                <code>[v]</code>
+                <div class="fy-remark">
+                    <p>保持发音标<code>[f]</code>音的嘴型，发汉语拼音【<code>u</code>】（乌）的音。</p>
+                    <p>发音时，嘴型需要和发【<code>f</code>】音时相同，即上齿贴住下嘴唇，然后发汉语拼音【<code>wu</code>】音。</p>
+                   
+
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_5" title="【z】">
+                <code>[z]</code>
+                <div class="fy-remark">
+                    <p>不能直接念【资】，而是英文字母中XYZ中的【<code>Z</code>】的前半截音加上音标<code>[s]</code>的后半截组合起来的发出的音。有点像荆门方言中的“日”发出的音。</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_6" title="咬舌[z]">
+                <code>[ð]</code>
+                <div class="fy-remark">
+                    <p>咬舌音，轻轻咬住舌尖发音标<code>[z]</code>的音，咬着舌尖，不能清脆发出。</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_7" title="">
+                <code>[ʒ]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>r-ü】</code>。</p>
+                    <p>（汉语拼音【<code>r</code>】和【<code>ü</code>】的和音。）</p>
+                    <p>发音时，嘴型和<code>[∫]</code>相同，但要发出音，有声声带振动。</p>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_8" title="[d-ʒ]">
+                <code>[dʒ]</code>
+                <div class="fy-remark">
+                    <p>音标<code>[d]</code>和<code>[ʒ]</code>的和音，发音类似于汉语拼音【<code>d-ji</code>】</p>
+                    <p>（汉语拼音【<code>d</code>】和【<code>ji</code>】的和音）</p>
+                </div>
+            </div>
+
+            <div class="zy kyb"><code>&nbsp;&nbsp;&nbsp;</code></div>
+
+
+            <div class="zy yb yb-bgcolor_1" title="【me】或【en】">
+                <code>[m]</code>
+                <div class="fy-remark">
+                    <p>鼻音，该音标发音有以下两种情况：</p>
+                    <ul>
+                        <li>该音标在母音前： 发音类似于汉语拼音【<code>me</code>】（么）。</li>
+                        <li>该音标在母音后：闭着嘴巴念汉语拼音中的【<code>mu</code>】音，有点像哼出来的音。</li>
+                    </ul>
+
+                    <div class="dpsm">
+                        <h4>和母音搭配时<code>[m]</code>的发音说明和示例：</h4>
+                        <ul>
+                            <li>
+                                <code>[ʌm]</code>:【<code>ang-m</code>】，例如：<p><code>[dʌmp]</code>（【<code>dang</code>】<code>[p]</code>）</p>
+                            </li>
+                            <li>
+                                <code>[əm]</code>:【<code>eng</code>】
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_1" title="【ne】或【en】">
+                <code>[n]</code>
+                <div class="fy-remark">
+                    <p>鼻音，该音标发音有以下两种情况：</p>
+                    <ul>
+                        <li>该音标在母音前：发音类似于汉语拼音中的声母【<code>n</code>】（<code>ne</code>，呢）。</li>
+                        <li>该音标在母音后：发音类似于汉语拼音中的前鼻音【<code>en</code>】（嗯），舌尖抵在上齿后面，嘴巴不闭合。</li>
+                    </ul>
+
+                    <div class="dpsm">
+                        <h4>和其他音标搭配时<code>[n]</code>的发音说明和示例：</h4>
+                        <ul>
+                            <li><code>[n]</code>要和前面的母音联合发音（和音，例如：“这样”和音为“酱”）</li>
+                            <li><code>[æn]</code>:【<code>an</code>】，例如：<code>[mæn]</code>、<code>[glæns]</code></li>
+                            <li><code>[on]</code>:【<code>ou-eng</code>】，例如：<code>['onɚ]</code>，<code>phone[fon]</code></li>
+                            <li><code>[dn]</code>:【<code>den</code>】，<code>[dn]</code>中间省略了懒人音<code>[ə]</code></li>
+                            <li><code>[ʌn]</code>:音标末尾发【<code>an</code>】，音标中发【<code>ang</code>】</li>
+                            <li><code>[ən]</code>:【<code>en</code>】</li>
+                            <li><code>[aʊn]</code>:【<code>ang</code>】，例如:<code>[faund]</code></li>
+                            <li><code>[en]</code>:【<code>ei-n</code>】，例如：<code>rain[ren]</code>（【<code>rei</code>】）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zy yb yb-bgcolor_1" title="【eng】">
+                <code>[ŋ]</code>
+                <div class="fy-remark">
+                    <p>发音类似汉语拼音中的后鼻音【<code>eng</code>】</p>
+                    <p>舌尖要抵在下齿，嘴巴张大，发出汉语拼音【<code>eng</code>】音。</p>
+                    <div class="bc">
+                        <p>
+                            发音的技巧在于发音时的嘴型和舌头所处位置。
+                        </p>
+                    </div>
+
+                    <div class="dpsm">
+                        <h4>和其他音标搭配时<code>[ŋ]</code>的发音说明和示例：</h4>
+                        <p>（参考[n]）</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="zy yb" title="【le】或【ao-ou】">
+                <code>[l]</code>
+                <div class="fy-remark">
+                    <p>该音标发音有以下两种情况：</p>
+                    <ul>
+                        <li>该音标在母音前：发音类似于汉语拼音中的声母【<code>l</code>】（le，了）</li>
+                        <li>
+                            该音标在母音后：
+                            <p>发音类似于汉语拼音【<code>ao-ou</code>】。（汉语拼音【<code>ao</code>】和【<code>ou</code>】的和音）</p>
+                            <p>介于音标<code>[ə]</code>和<code>[o]</code>之间，舌头上翘发出。</p>
+                        </li>
+                    </ul>
+
+                    <div class="dpsm">
+                        <h4>和其他音标搭配时<code>[l]</code>的发音说明和示例：</h4>
+                        <ul>
+                            <li><code>[ɛl]</code>:【<code>ai-ao</code>】</li>
+                            <li><code>[*l]</code>:【<code>*-ou</code>】，例如：[bl]（【bou】）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zy yb" title="【ro-er】或【er】">
+                <code>[r]</code>
+                <div class="fy-remark">
+                    <p>该音标发音有以下两种情况：</p>
+                    <ul>
+                        <li>
+                            该音标在母音前：
+                            <p>发音类似于汉语拼音【<code>ro-er</code>】。（汉语拼音【<code>ro</code>】和【<code>er</code>】的和音）</p>
+                        </li>
+                        <li>
+                            该音标在母音后：
+                            <p>发音类似于汉语拼音【<code>er</code>】（儿）。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="zy yb" title="【wu】">
+                <code>[w]</code>
+                <div class="fy-remark">
+                    <p>发音类似于汉语拼音【<code>wu</code>】（无）。</p>
+                    <p>
+                        注意和母音<code>[ʊ]</code>和<code>[u]</code>发音时嘴型上的区别，<code>[w]</code>是轻声一声发出，嘴巴不要嘟起来。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="zy yb" title="【yi】">
+                <code>[j]</code>
+                <div class="fy-remark">
+                    <p>
+                        发音类似于汉语拼音【<code>yi</code>】（一），轻声。
+                    </p>
+                </div>
+            </div>
+
+
+            <div style="clear:both;"></div>
+        </div>
+
+
+        <div class="zy-rq">
+            <h3 class="zy-title">补充部分</h3>
+
+            <div class="zy yb" title="【ci】">
+                <code>[ts]</code>
+                <div class="fy-remark">
+                    <p>
+                        发音类似于汉语拼音【<code>ci</code>】（次）。
+                    </p>
+                </div>
+            </div>
+
+            <div class="zy yb" title="【zi】">
+                <code>[dz]</code>
+                <div class="fy-remark">
+                    <p>
+                        发音类似于汉语拼音【<code>zi</code>】（资）。
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+            <div style="clear:both;"></div>
+
+			<img src="美音和国际音标对照表.png" />
+
+            <!--26个字母自然发音-->
+            <h1 style="text-align:center; margin-top:30px; color:#028f8f;">26个字母常见发音</h1>
+            <div class="zm-zrfy">
+
+                <!--第一列-->
+                <div class="zm-column">
+
+                    <div class="zm-panel">
+                        <h4>Aa</h4>
+                        <dl>
+                            <dt>[æ]</dt>
+                            <dd>
+                                <code>bag[bæg]</code>
+                                <code>cat[kæt]</code>
+                                <code>jam[dʒæm]</code>
+                            </dd>
+
+                            <dt>[ɑ]</dt>
+                            <dd>
+                                <code>car[kɑr]</code>
+                            </dd>
+
+                            <dt>[e]</dt>
+                            <dd>
+                                单词以e结尾时，字母a发[e]，例如：<code>face[fes]</code>
+                                <code>game[gem]</code>
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Ff</h4>
+                        <dl>
+                            <dt>[f]</dt>
+                            <dd>
+                                <code>face[fes]</code>
+                                <code>fan[fæn]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Kk</h4>
+                        <dl>
+                            <dt>[k]</dt>
+                            <dd>
+                                <code>key[ki]</code>
+                                <code>king[kɪŋ]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Pp</h4>
+                        <dl>
+                            <dt>[p]</dt>
+                            <dd>
+                                <code>pig[pɪg]</code>
+                                <code>pork[pork]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Uu</h4>
+                        <dl>
+                            <dt>[ʌ]</dt>
+                            <dd>
+                                <code>cup[kʌp]</code>
+                                <code></code>
+                                <code></code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Zz</h4>
+                        <dl>
+                            <dt>[z]</dt>
+                            <dd>
+                                <code>zero['zɪro]</code>
+                                <code>zoo[zu]</code>
+                                <code>size[saɪz]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <!--第二列-->
+                <div class="zm-column">
+                    <div class="zm-panel">
+                        <h4>Bb</h4>
+                        <dl>
+                            <dt>[b]</dt>
+                            <dd>
+                                <code>bat[bæt]</code>
+                                <code>bed[bɛd]</code>
+                                <code>boy[bɔɪ]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Gg</h4>
+                        <dl>
+                            <dt>[g]</dt>
+                            <dd>
+                                <code>game[gem]</code>
+                                <code>girl[gɝl]</code>
+                                <code>leg[lɛg]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Ll</h4>
+                        <dl>
+                            <dt>[l]</dt>
+                            <dd>
+                                <code>lake[lek]</code>
+                                <code>leaf[lif]</code>
+                                <code>light[lait]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Qq</h4>
+                        <dl>
+                            <dt>[kw]</dt>
+                            <dd>
+                                单词中出现qu时，发[kw]（【kuo-ʊ】），例如：
+                                <code>quit[kwit]</code>
+                                <code>queen[kwɪn]</code>
+                                <code>question['kwɛstʃən]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Vv</h4>
+                        <dl>
+                            <dt>[v]</dt>
+                            <dd>
+                                <code>vase[ves]</code>
+                                <code>voice[vɔɪs]</code>
+                                <code></code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>gh</h4>
+                        <dl>
+                            <dt>不发音</dt>
+                            <dd>
+                                gh在单词中间不发音
+                                <code>light[lait]</code>
+                                <code></code>
+                                <code></code>
+                            </dd>
+                            <dt>[g]</dt>
+                            <dd>
+                                gh在单词开头时，发[g]，例如：
+                                <code>ghost[gost]</code>
+                            </dd>
+                            <dt>[f]</dt>
+                            <dd>
+                                gh在au/ou之后单词字尾时，发[f],例如：
+                                <code>laugh[læf]</code>
+                                <code>enough[ɪ'nʌf]</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+
+                <!--第三列-->
+                <div class="zm-column">
+
+                    <div class="zm-panel">
+                        <h4>Cc</h4>
+                        <dl>
+                            <dt>[k]</dt>
+                            <dd>
+                                在字母a/o/u前，发[k]，例如：
+                                <code>can[kæn]</code>
+                                <code>car[kɑr]</code>
+                                <code>coat[kot]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Hh</h4>
+                        <dl>
+                            <dt>[h]</dt>
+                            <dd>
+                                <code>hat[hæt]</code>
+                                <code>hair[hɛr]</code>
+                                <code>hope[hop]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Mm</h4>
+                        <dl>
+                            <dt>[m]</dt>
+                            <dd>
+                                <code>man[mæn]</code>
+                                <code>mask[mæsk]</code>
+                                <code>meat[mit]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Rr</h4>
+                        <dl>
+                            <dt>[r]</dt>
+                            <dd>
+                                <code>rabbit['ræbɪt]</code>
+                                <code>rain[ren]</code>
+                                <code>right[rait]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Ww</h4>
+                        <dl>
+                            <dt>[w]</dt>
+                            <dd>
+                                <code>watch[wat∫]</code>
+                                <code></code>
+                                <code></code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+
+                <!--第四列-->
+                <div class="zm-column">
+                    <div class="zm-panel">
+                        <h4>Dd</h4>
+                        <dl>
+                            <dt>[d]</dt>
+                            <dd>
+                                <code>dog[dɔg]</code>
+                                <code>door[dɔr]</code>
+                                <code>duck[dʌk]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Ii</h4>
+                        <dl>
+                            <dt>[ɪ]</dt>
+                            <dd>
+                                <code>bib[bɪb]</code>
+                                <code>kiss[kis]</code>
+                                <code>six[sɪks]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Nn</h4>
+                        <dl>
+                            <dt>[n]</dt>
+                            <dd>
+                                <code>name[nem]</code>
+                                <code>neck[nɛk]</code>
+                                <code>night[nait]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+
+                    <div class="zm-panel">
+                        <h4>Ss</h4>
+                        <dl>
+                            <dt>[s]</dt>
+                            <dd>
+                                <code>sale[sel]</code>
+                                <code>sea[si]</code>
+                                <code>bus[bʌs]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Xx</h4>
+                        <dl>
+                            <dt>[ks]</dt>
+                            <dd>
+                                <code>box[baks]</code>
+                                <code>ax[æks]</code>
+                                <code>ox[ɑks]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+
+
+                <!--第五列-->
+                <div class="zm-column">
+                    <div class="zm-panel">
+                        <h4>Ee</h4>
+                        <dl>
+                            <dt>不发音</dt>
+                            <dd>在单词末尾不发音</dd>
+                            <dt>[ɛ]</dt>
+                            <dd>
+                                <code>bell[bɛl]</code>
+                                <code>desk[dɛsk]</code>
+                                <code>red[rɛd]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Jj</h4>
+                        <dl>
+                            <dt>[dʒ]</dt>
+                            <dd>
+                                <code>job[dʒɑb]</code>
+                                <code>July[dʒʊ'laɪ]</code>
+                                <code>jump[dʒʌmp]</code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Oo</h4>
+                        <dl>
+                            <dt>[o]</dt>
+                            <dd>
+                                <code>cold[kold]</code>
+                                <code>rose[ros]</code>
+                                <code>smoke[smok]</code>
+                            </dd>
+                            <dt>[u]</dt>
+                            <dd>
+                                <code>food[fud]</code>
+                                <code></code>
+                                <code></code>
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Tt</h4>
+                        <dl>
+                            <dt>[t]</dt>
+                            <dd>
+                                <code>table['teɪbəl]</code>
+                                <code>point[pɔɪnt]</code>
+                                <code></code>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="zm-panel">
+                        <h4>Yy</h4>
+                        <dl>
+                            <dt>[j]</dt>
+                            <dd>
+                                <code>yellow['jɛlo]</code>
+                                <code>yes[jɛs]</code>
+                                <code>young[jʌŋ]（【yang】）</code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('.yb').click(function () {
+                $('.yb-active').removeClass('yb-active');
+                $('#yb_remark_panel').empty().append($(this).children('.fy-remark').html());
+                $(this).addClass('yb-active');
+            });
+
+
+        });
+    </script>
+
+</body>
+</html>
+
+todo：第6集

@@ -1,0 +1,212 @@
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /*母音相关的 */
+        .my-rq, wz-rq {
+            position: relative;
+        }
+
+        .my {
+            position: absolute;
+        }
+
+        .zy-rq {
+            margin-top: 10px;
+        }
+
+        .zy {
+            float: left;
+            margin-left: 15px;
+        }
+
+        .my-wz {
+            position: absolute;
+            font-size: 28px;
+            color: #4e7923;
+        }
+
+        h3.my-wz, h3 {
+            color: #393737;
+        }
+
+        .zy-title {
+            font-size: 28px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+
+        .yb, .kyb {
+            background-color: #ebfaf6;
+            font-size: 23px;
+            padding: 10px;
+            border: 1px solid #c4c3c3;
+        }
+
+
+        .yb-bgcolor_1 {
+            background-color: #fcc0fc;
+        }
+
+        .yb-bgcolor_2 {
+            background-color: #fbf6ba;
+        }
+
+        .yb-bgcolor_3 {
+            background-color: #b3f0f8;
+        }
+
+        .yb-bgcolor_4 {
+            background-color: #fcbec7;
+        }
+
+        .yb-bgcolor_5 {
+            background-color: #c6fbb0;
+        }
+
+        .yb-bgcolor_6 {
+            background-color: #c2dcfc;
+        }
+
+        .yb-bgcolor_7 {
+            background-color: #c6ffe5;
+        }
+
+        .yb-bgcolor_8 {
+            background-color: #e8e7ff;
+        }
+
+        .yb:hover, .yb-active {
+            background-color: #ff6a00;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+
+
+
+
+        .fy-remark {
+            display: none;
+        }
+
+
+        .yb-remark-panel {
+            width: 400px;
+            border: 1px solid #ea6506;
+            font-size: 20px;
+            color: #ea6506;
+            padding: 10px;
+            line-height: 30px;
+            float: left;
+        }
+
+            .yb-remark-panel code, .right-message-panel code {
+                border: 1px solid #f8f2f2;
+                background-color: #fbf9f9;
+                padding: 2px 3px;
+                line-height: 35px;
+                border-radius: 3px;
+            }
+
+            .yb-remark-panel ul {
+                margin-left: 25px;
+            }
+
+
+        .right-message-panel {
+            background-color: #fefdf0;
+            float: right;
+            width: 520px;
+            font-size: 20px;
+            padding: 10px 10px 10px 30px;
+        }
+
+            .right-message-panel li {
+                margin-top: 10px;
+                line-height: 28px;
+                margin-left: 10px;
+            }
+
+        .bc {
+            color: #bb031f;
+            font-size: 20px;
+            line-height: normal;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .dpsm {
+            color: #0461b1;
+        }
+
+        .yb-remark-panel h4 {
+            color: #495660;
+            font-size: 20px;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+
+
+
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #808080;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .zm-column {
+            width: 19%;
+            float: left;
+            margin-left: 1%;
+        }
+
+        .dpsm-zm {
+            color: #ea6506;
+            font-size: 26px;
+        }
+
+        .dpsm dd {
+            padding-left: 5px;
+        }
+
+        .zm-panel {
+            background-color: #fef0e5;
+            margin-top: 10px;
+            font-size: 22px;
+            border: 3px solid #fcd3b5;
+        }
+
+            .zm-panel h4 {
+                text-align: center;
+                font-size: 28px;
+                color: #028f8f;
+                background-color: #fcd3b5;
+                padding: 5px;
+                font-weight: 500;
+            }
+
+        dl {
+            margin-bottom: 10px;
+        }
+
+        dt {
+            color: #ea6506;
+            font-weight: 500;
+            margin-top: 10px;
+            font-size: 26px;
+            padding-left: 5px;
+        }
+
+        dd {
+            padding-left: 40px;
+        }

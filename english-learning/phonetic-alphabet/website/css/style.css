@@ -86,7 +86,9 @@
             color: #ffffff;
         }
 
-
+        code span{
+            font-size: 12px;
+        }
 
 
 
@@ -96,7 +98,7 @@
 
 
         .yb-remark-panel {
-            width: 400px;
+            width: 480px;
             border: 1px solid #ea6506;
             font-size: 20px;
             color: #ea6506;
@@ -121,7 +123,7 @@
         .right-message-panel {
             background-color: #fefdf0;
             float: right;
-            width: 520px;
+            width: 410px;
             font-size: 20px;
             padding: 10px 10px 10px 30px;
         }
